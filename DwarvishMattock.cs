@@ -182,14 +182,11 @@ namespace DwarvishMattock
 			helper.Events.GameLoop.Saved += (s, e) => restorePlaceholderMattocks();
 			helper.Events.GameLoop.SaveLoaded += (s, e) => restorePlaceholderMattocks();
 			helper.Events.Player.Warped += OnWarped;
-			helper.Events.GameLoop.GameLaunched += OnGameLaunched;
 		}
 
 		/*********
 		** Private methods
 		*********/
-
-
 		private static T XmlDeserialize<T>(string toDeserialize)
 		{
 			XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
@@ -325,30 +322,6 @@ namespace DwarvishMattock
 		private void SpawnMattockCommand(string command, string[] args)
 		{
 			Game1.player.addItemToInventory(new Mattock());
-		}
-
-		[EventPriority(EventPriority.Low)]
-		private void OnGameLaunched(object sender, GameLaunchedEventArgs args)
-		{
-			// try
-			// {
-			// 	Game1.content.Load<Dictionary<string, string>>("Data\\Events\\Blacksmith");
-			// }
-			// catch (Exception e)
-			// {
-			// 	M.Log(e.ToString(), LogLevel.Warn);
-			// 	// Failed to load the content, so it's already being loaded somewhere else!
-			// 	providesBlacksmithEvents = false;
-			// }
-
-			// if (providesBlacksmithEvents)
-			// {
-			// 	Helper.Content.AssetLoaders.Add(new AssetLoader());
-			// }
-			// else
-			// {
-			// 	Helper.Content.AssetEditors.Add(new AssetEditor());
-			// }
 		}
 
 		/// <summary>The method called after a player warps somewhere.</summary>
