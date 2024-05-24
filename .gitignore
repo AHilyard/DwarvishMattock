@@ -1,6 +1,2 @@
-# vscode
-.vscode
-
-# other
-bin
-obj
+bin/
+obj/
